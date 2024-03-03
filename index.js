@@ -9,6 +9,7 @@ import productRouter from './src/modules/product/product.router.js'
 import cartRouter from './src/modules/cart/cart.router.js'
 import orderRouter from './src/modules/order/order.router.js'
 import reviewRouter from './src/modules/review/review.router.js'
+import cors from 'cors'
 
 import dotenv from 'dotenv'
 
@@ -16,6 +17,7 @@ dotenv.config()
 const app = express();
 const port = process.env.PORT;
 
+app.use(cors())
 app.use(express.json())
 
 await connectDB();
